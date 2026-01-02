@@ -1,0 +1,22 @@
+model:
+  name: 'resnet'
+  pretrained: True
+  variant: 'resnet18'
+  params:
+    pool_hidden_size: 256
+    cls_hidden_size: 256
+    dropout: 0.3        
+  training:
+    lr_backbone: 1e-3   
+    lr_head: 1e-4       
+    warmup_epochs: 1
+    weight_decay: 2e-3 
+    batch_size: 16
+    epochs: 10
+
+data:
+  name: 'PIE'
+
+general:
+  seed: 123
+  logging: True
